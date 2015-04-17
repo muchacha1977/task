@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>диалог регистрации:</title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/json2/20110223/json2.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    
+</head>
+<body>
+
+
+<div class="container">
+ <div id="main-region" class="container"></div>
+<div class="app-container">
+     <!--div id="main-region" class="container"></div>-->
+	  <script type="text/template" id="tpl-static">
+           	<nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Shop</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Войти</a></li>
+            <li><a href="#contacts/new">Зарегистрироваться</a></li>  
+          </ul>
+         
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>   
+	  </script>
+	
+	  
+    <!-- Modal HTML Step 1-->
+    <script type="text/template" id="tpl-contacts-1">
+	<nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Shop</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Войти</a></li>
+            <li><a href="#contacts/new">Зарегистрироваться</a></li>  
+            
+          </ul>
+         
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+	
+		<div class="modal-dialog">
+		<div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">x</button>
+            <h3>Регистрация - шаг 1  из 3</h3>
+          </div>
+          <div class="modal-body">
+            <form method="post" action='' name="login_form">
+			<p>Кто вы?</p>
+              <p>
+                    <button id="type1" type="button" class="btn btn-default" data-dismiss="modal">Покупатель</button>
+                    <button id="type2" type="button" class="btn btn-default">Продавец</button> 
+              </p>
+            </form>
+				</div>
+			</div>
+          </div>
+	 </script>
+	
+	    <script type="text/template" id="tpl-contacts-2-type1">
+		  <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Shop</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Войти</a></li>
+            <li><a href="#contacts/new">Зарегистрироваться</a></li>  
+            
+          </ul>
+         
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+		<div class="modal-dialog">
+		<div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">x</button>
+            <h3>Регистрация - шаг 2  из 3</h3>
+          </div>
+          <div class="modal-body">
+		  <p> Вы зарегистрировались как Покупатель</p>
+            <form method="post" action='' name="login_form">
+			  <p><input type="text" class="span3" name="eid" id="intro" placeholder="Представтесь"></p>
+              <p><input type="text" class="span3" name="eid" id="email" placeholder="Почта"></p>
+              <p><input type="password" class="span3" name="Telefon" placeholder="Телефон"></p>
+              <p><button type="button" class="btn btn-default" data-dismiss="modal">Зарегистрироваться</button>
+                <a href="#" id="returnBtn" >Назад?</a>
+              </p>
+            </form>
+          </div>
+			</div>
+          </div>
+		 </script>
+		 <script type="text/template" id="tpl-contacts-2-type2">
+		   <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Shop</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+           <li class="active"><a href="#">Войти</a></li>
+            <li><a href="#contacts/new">Зарегистрироваться</a></li>  
+            
+          </ul>
+         
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+		<div class="modal-dialog">
+		<div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">x</button>
+            <h3>Регистрация - шаг 2  из 3</h3>
+          </div>
+          <div class="modal-body">
+         	  <p> Вы зарегистрировались как Продавец</p>
+            <form method="post" action='' name="login_form">
+			  <p><input type="text" class="span3" name="eid" id="intro" placeholder="Представтесь"></p>
+              <p><input type="text" class="span3" name="eid" id="email" placeholder="Почта"></p>
+              <p><input type="password" class="span3" name="Telefon" placeholder="Телефон"></p>
+              <p><button type="button" class="btn btn-default" data-dismiss="modal">Зарегистрироваться</button>
+                <a href="#" id="returnBtn">Назад?</a>
+              </p>
+            </form>
+          </div>
+        </div>
+         </div>
+	 </script>
+	    <script type="text/template" id="tpl-contacts-3">
+		  <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Shop</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Войти</a></li>
+            <li><a href="#contacts/new">Зарегистрироваться</a></li>       
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+		<div class="modal-dialog">
+		<div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">x</button>
+            <h3>Регистрация - шаг 3  из 3</h3>
+          </div>
+          <div class="modal-body">
+              <p>
+				<p>Регистрация завершенa  </p>
+                <a href="#">Кабинет</a>
+				<a href="#">Каталог</a>
+              </p>
+          </div>
+		  </div>
+         </div>
+	 </script>
+    </div>
+   </div>
+    <script src="backbone.marionette/underscore.js"></script>
+    <script src="backbone.marionette/backbone.js"></script>
+    <script src="backbone.marionette/backbone.marionette.js"></script>
+    <script src="vendor/Backbone.localStorage/backbone.localStorage.js"></script>
+    <script src="backbone.marionette/jquery.js"></script>
+
+    <script src="assets/main.js"></script>
+
+    
+</body>
+</html>                   
